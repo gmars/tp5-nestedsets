@@ -1,0 +1,20 @@
+{
+  "name": "gmars/tp5-nestedsets",
+  "description": "此扩展是thinkPHP5的nestendsets的扩展。能够方便的在项目中来管理有层级关系的数据结构。该扩展在算法上部分参考了Willfred di Vampo的nestedsets，实现了数据的插入，移动，删除，遍历等功能。",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "weiyongqiang",
+      "email": "hayixia606@163.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "gmars\\nestedsets\\": "src"
+    }
+  }
+}
