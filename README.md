@@ -20,7 +20,7 @@ composer require gmars/tp5-nestedsets
     "require": {
         "php": ">=5.4.0",
         "topthink/framework": "^5.0",
-        "gmars/tp5-rbac": "dev-master"
+        "gmars/tp5-nestedsets": "dev-master"
     },
 ```
 
