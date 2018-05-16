@@ -210,8 +210,6 @@ class NestedSets
             throw new Exception('没有该节点');
         }
 
-        Db::startTrans();
-
         $keyWidth = $item[$this->rightKey] - $item[$this->leftKey]+1;
 
         //先删除节点及后代节点
@@ -226,11 +224,8 @@ class NestedSets
             //再移动节点
             Db::table($this->tableName)->query($sql);
 
-            Db::commit();
             return true;
         }catch (Exception $e){
-            Db::rollback();
-            dump($e->getMessage());
             return false;
         }
     }
