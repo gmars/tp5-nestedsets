@@ -1,6 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
+ * Created.
  * Author: 魏永强   <hayixia606@163.com>
  * GitHub: https://github.com/gmars
  * Blog: http://blog.csdn.net/marswill
