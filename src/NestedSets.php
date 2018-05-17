@@ -119,8 +119,8 @@ class NestedSets
             throw new Exception('没有该节点');
         }
 
-        $condition[$this->leftKey] = [$optionOne, $item[$this->leftKey]];
-        $condition[$this->rightKey] = [$optionTwo, $item[$this->rightKey]];
+        $condition[] = [$this->leftKey, $optionOne, $item[$this->leftKey]];
+        $condition[] = [$this->rightKey, $optionTwo, $item[$this->rightKey]];
         return Db::table($this->tableName)
             ->where($condition)
             ->order("{$this->leftKey}")
@@ -145,7 +145,7 @@ class NestedSets
     public function getChild($id)
     {
         return Db::table($this->tableName)
-            ->where([$this->parentKey => $id])
+            ->where($this->parentKey, '=', $id)
             ->order("{$this->leftKey}")
             ->select();
     }
@@ -213,8 +213,8 @@ class NestedSets
         $keyWidth = $item[$this->rightKey] - $item[$this->leftKey]+1;
 
         //先删除节点及后代节点
-        $condition[$this->leftKey] = ['>=', $item[$this->leftKey]];
-        $condition[$this->rightKey] = ['<=', $item[$this->rightKey]];
+        $condition[] = [$this->leftKey, '>=', $item[$this->leftKey]];
+        $condition[] = [$this->rightKey, '<=', $item[$this->rightKey]];
 
         try {
             Db::table($this->tableName)
@@ -417,7 +417,7 @@ class NestedSets
             self::$itemCache[$id] =
                 Db::table($this->tableName)
                 ->field([$this->leftKey, $this->rightKey, $this->parentKey, $this->levelKey])
-                ->where([$this->primaryKey => $id])
+                ->where($this->primaryKey, '=', $id)
                 ->find();
         }
 
