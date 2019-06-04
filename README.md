@@ -1,3 +1,6 @@
+# 新包发布
+地址: [https://github.com/gmars/infinite-tree](https://github.com/gmars/infinite-tree)
+特性: 不依赖于特定的PHP框架，使用更便捷
 # tp5-nestedsets
 >本扩展包是tp5的nestedsets包，使用了部分tp5的特性实现了关系型数据库中特殊数据结构的处理。
 
